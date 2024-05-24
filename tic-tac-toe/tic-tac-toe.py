@@ -21,9 +21,11 @@ arr = [[" " for x in range(3)] for y in range(3)]
 
 # Function for move validation
 def is_valid(move):
+    # If out of range
     if move[0] < "A" or move[0] > "C" or move[1] < "1" or move[1] > "3":
         return False
     else:
+        # If field is already taken
         if arr[dic.get(move[0]) - 1][int(move[1]) - 1] != " ":
             return False
         else:
@@ -38,7 +40,7 @@ def p1_input():
     while is_valid(p1) is False:
         print("Invalid move, please enter correct value:")
         p1 = input().upper()
-
+    # Putting move on board
     arr[dic.get(p1[0]) - 1][int(p1[1]) - 1] = "X"
 
 
@@ -50,7 +52,7 @@ def p2_input():
     while is_valid(p2) is False:
         print("Invalid move, please enter correct value:")
         p2 = input().upper()
-
+    # Putting move on board
     arr[dic.get(p2[0]) - 1][int(p2[1]) - 1] = "O"
 
 
